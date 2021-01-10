@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+ {% block monTitre %}Gérer les produits {% endblock %}
+{% block body %}
+ <a class="btn btn-success mb-2" href="#">Ajouter</a>
+ <table class="table">
+  <tr class="table-primary text-center">
+   <th class="w-25">Nom</th>
+   <th class="w-25">Prix</th>
+   <th class="w-25">Description</th>
+   <th class="w-25">Actions</th>
+  </tr>
+  {% for produit in produits %}
+   <tr class="text-center">
+    <td>{{ produit.nom }}</td>
+    <td>{{ produit.prix | number_format(2, '.', ' ') }}</td>
+    <td>{{ produit.description }}</td>
+    <!--<td>{% if produit.promo == 0 %} non {% else %} oui {% endif %}</td> -->
+    <td>
+     <a class="btn btn-secondary" href="" >Modifier</a>
+     <a class="btn btn-danger" href="">Supprimer</a>
+    </td>
+   </tr>
+  {% endfor %}
+ </table>
+{% endblock %}

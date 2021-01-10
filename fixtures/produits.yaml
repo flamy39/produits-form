@@ -1,0 +1,12 @@
+App\Entity\Categorie:
+  categorie_{1..10}:
+    nom: <word()>
+
+App\Entity\Produit:
+  product_{1..100}:
+    nom: <word()>
+    prix: <numberBetween(50,40000)>
+    description: <text(100)>
+    promo: '10%? 1 : 0'
+    contenu: "dsd"
+    categorie: '@categorie_*'
